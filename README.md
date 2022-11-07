@@ -194,7 +194,8 @@ License.
 
 # Build outside of FNAL Stack like
 
-```mkdir build; cd build
+```
+mkdir build; cd build
 cmake .. -DSTANDALONE_BUILD=ON -DCMAKE_INSTALL_PREFIX=/path/to/install/dir
 make install
 ```
