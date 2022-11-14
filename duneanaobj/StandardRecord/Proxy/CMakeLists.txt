@@ -16,4 +16,3 @@ install(TARGETS duneanaobj_StandardRecordProxy DESTINATION lib)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SRProxy.h 
               ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h 
         DESTINATION include/duneanaobj/StandardRecord/Proxy)
-
