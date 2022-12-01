@@ -15,4 +15,3 @@ install(TARGETS duneanaobj_StandardRecordFlat DESTINATION lib)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SRFlat.h 
               ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h 
         DESTINATION include/duneanaobj/StandardRecord/Flat)
-
