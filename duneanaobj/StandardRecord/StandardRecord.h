@@ -30,6 +30,9 @@ namespace caf
       /// Information about the beam configuration and beam pulse for this event
       SRBeamBranch beam;
 
+      std::string duneanaobj_gitshorthash;
+      unsigned short duneanaobj_version[3];
+
       /// Truth information
       SRTruthBranch mc;
 
