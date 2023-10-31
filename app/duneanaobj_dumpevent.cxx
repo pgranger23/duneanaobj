@@ -29,11 +29,10 @@ int main(int argc, char const *argv[]) {
               << ", " << srp.duneanaobj_version[1] << ", "
               << srp.duneanaobj_version[2] << std::endl;
 
-    std::cout << "\tsrp.nd.LArID: " << srp.nd.LArID.GetValue() << std::endl;
-    std::cout << "\tsrp.nd.TMSID: " << srp.nd.TMSID.GetValue() << std::endl;
-    std::cout << "\tsrp.nd.Residual: " << srp.nd.Residual.GetValue()
+    std::cout << "\tsrp.nd.lar.ndlp: " << srp.nd.lar.ndlp.GetValue() << std::endl;
+    std::cout << "\tsrp.nd.lar.npandora: " << srp.nd.lar.npandora.GetValue()
               << std::endl;
-    std::cout << "\tsrp.nd.cosTheta: " << srp.nd.cosTheta.GetValue()
-              << std::endl;
+
+    std::cout << "\tsrp.nd.tms.nixn: " << srp.nd.tms.nixn.GetValue() << std::endl;
   }
 }

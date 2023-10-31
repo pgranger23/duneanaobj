@@ -24,14 +24,18 @@ namespace caf
   class StandardRecord
   {
     public:
+
+      StandardRecord();
+      ~StandardRecord();
+
+      std::string duneanaobj_gitshorthash;
+      unsigned short duneanaobj_version[3];
+
       /// Metadata about the detectors
       SRDetectorMetaBranch meta;
 
       /// Information about the beam configuration and beam pulse for this event
       SRBeamBranch beam;
-
-      std::string duneanaobj_gitshorthash;
-      unsigned short duneanaobj_version[3];
 
       /// Truth information
       SRTruthBranch mc;

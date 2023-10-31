@@ -1,4 +1,3 @@
-
 include_directories(${CMAKE_SOURCE_DIR})
 
 ROOT_GENERATE_DICTIONARY(StandardRecordDict StandardRecord.h
