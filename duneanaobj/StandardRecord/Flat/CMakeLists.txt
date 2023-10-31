@@ -11,6 +11,7 @@ add_library(duneanaobj_StandardRecordFlat SHARED SRFlat.cxx)
 target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC SRProxy_BasicTypes)
 target_include_directories(duneanaobj_StandardRecordFlat PUBLIC ${CMAKE_SOURCE_DIR})
 
+
 install(TARGETS duneanaobj_StandardRecordFlat DESTINATION lib)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SRFlat.h 
               ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h 
