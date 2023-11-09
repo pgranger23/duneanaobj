@@ -151,6 +151,15 @@
    <version ClassVersion="10" checksum="2431680929"/>
   </class>
 
+  <class name="caf::SRNDTrkAssnBranch" ClassVersion="10">
+  </class>
+
+  <class name="caf::SRNDShwAssnBranch" ClassVersion="10">
+  </class>
+
+  <class name="caf::SRNDShowerAssn" ClassVersion="10">
+  </class>
+
   <class name="caf::SRNDTrackAssn" ClassVersion="13">
    <version ClassVersion="13" checksum="744508541"/>
    <version ClassVersion="12" checksum="3802670637"/>
