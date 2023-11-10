@@ -154,24 +154,27 @@
   </class>
 
   <class name="caf::SRNDLArID" ClassVersion="10">
+   <version ClassVersion="10" checksum="2141594677"/>
   </class>
 
   <class name="caf::SRTMSID" ClassVersion="10">
+   <version ClassVersion="10" checksum="592456580"/>
   </class>
 
   <class name="caf::SRGArID" ClassVersion="10">
-  </class>
-
-  <class name="caf::SRNDLArID" ClassVersion="10">
+   <version ClassVersion="10" checksum="8934362"/>
   </class>
 
   <class name="caf::SRNDTrkAssnBranch" ClassVersion="10">
+   <version ClassVersion="10" checksum="643281598"/>
   </class>
 
   <class name="caf::SRNDShwAssnBranch" ClassVersion="10">
+   <version ClassVersion="10" checksum="764455914"/>
   </class>
 
   <class name="caf::SRNDShowerAssn" ClassVersion="10">
+   <version ClassVersion="10" checksum="3398719456"/>
   </class>
 
   <class name="caf::SRNDTrackAssn" ClassVersion="13">
