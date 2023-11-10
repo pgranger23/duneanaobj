@@ -153,6 +153,18 @@
    <version ClassVersion="10" checksum="2431680929"/>
   </class>
 
+  <class name="caf::SRNDLArID" ClassVersion="10">
+  </class>
+
+  <class name="caf::SRTMSID" ClassVersion="10">
+  </class>
+
+  <class name="caf::SRGArID" ClassVersion="10">
+  </class>
+
+  <class name="caf::SRNDLArID" ClassVersion="10">
+  </class>
+
   <class name="caf::SRNDTrkAssnBranch" ClassVersion="10">
   </class>
 
