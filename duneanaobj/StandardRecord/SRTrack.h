@@ -34,7 +34,8 @@ namespace caf
 
       float E = NaN;         ///< Track energy estimate in MeV
 
-      TrueParticleID truth;  ///< Best-match GEANT truth particle for this track.  Use SRTruthBranch::Particle() to obtain this particle
+      std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
+      std::vector<float>   truthOverlap;              ///< Fractional overlap between this track and true particle
   };
 
 }
