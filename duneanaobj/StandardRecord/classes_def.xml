@@ -141,8 +141,12 @@
    <version ClassVersion="13" checksum="958085"/>
   </class>
 
+  <class name="caf::SRFDInt" ClassVersion="10">
+   <version ClassVersion="10" checksum="3607270087"/>
+   </class>
 
-  <!-- - - - - - - - - - ND specific - - - - - - - - - - - - - - - -->
+
+    <!-- - - - - - - - - - ND specific - - - - - - - - - - - - - - - -->
 
   <class name="caf::SRNDBranch" ClassVersion="15">
    <version ClassVersion="15" checksum="726502342"/>
@@ -191,13 +195,21 @@
    <version ClassVersion="10" checksum="3845592869"/>
   </class>
 
+  <class name="caf::SRNDLArInt" ClassVersion="10">
+   <version ClassVersion="10" checksum="947356810"/>
+  </class>
+
   <class name="caf::SRGAr" ClassVersion="11">
    <version ClassVersion="11" checksum="10406631"/>
    <version ClassVersion="11" checksum="575060580"/>
    <version ClassVersion="10" checksum="2529880392"/>
   </class>
 
-  <class name="caf::SRGArTrack" ClassVersion="14">
+  <class name="caf::SRGArInt" ClassVersion="10">
+   <version ClassVersion="10" checksum="1674759717"/>
+  </class>
+
+    <class name="caf::SRGArTrack" ClassVersion="14">
    <version ClassVersion="14" checksum="2591374164"/>
    <version ClassVersion="13" checksum="3987769238"/>
    <version ClassVersion="12" checksum="3869515338"/>
@@ -222,7 +234,11 @@
    <version ClassVersion="10" checksum="418048849"/>
   </class>
 
-  <class name="caf::SRSAND" ClassVersion="13">
+  <class name="caf::SRTMSInt" ClassVersion="10">
+   <version ClassVersion="10" checksum="1667029942"/>
+  </class>
+
+    <class name="caf::SRSAND" ClassVersion="13">
    <version ClassVersion="13" checksum="1270542721"/>
    <version ClassVersion="12" checksum="1233697569"/>
    <version ClassVersion="11" checksum="3795335384"/>
@@ -232,6 +248,11 @@
   <class name="caf::SRMINERvA"  ClassVersion="10">
    <version ClassVersion="10" checksum="1718167975"/>
   </class>
+
+  <class name="caf::SRMINERvAInt" ClassVersion="10">
+   <version ClassVersion="10" checksum="87138233"/>
+  </class>
+
   <!-- - - - - - - - - - Truth - - - - - - - - - - - - - - - -->
 
   <class name="caf::SRTruthBranch" ClassVersion="10">
