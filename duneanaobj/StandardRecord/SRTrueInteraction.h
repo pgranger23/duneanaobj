@@ -94,7 +94,10 @@ namespace caf
 
        Generator                   generator = Generator::kUnknownGenerator;  ///< The generator that created this neutrino interaction
        std::vector<unsigned int>   genVersion;                                ///< Version of the generator that created this neutrino interaction
-       std::string                 genConfigString;                           ///< String associated with generator configuration. (For GENIE 3+, this is the "Comprehensive Model Configuration".)
+
+       // fixme: For unknown reasons, deserializing SRTrueInteractions with this branch sometimes (but not always) causes `free: invalid pointer` segfaults.
+       //        For the moment, we just disable it, but we need to track down what's going wrong at some point.
+//       std::string                 genConfigString;                           ///< String associated with generator configuration. (For GENIE 3+, this is the "Comprehensive Model Configuration".)
 
        // shortcuts to avoid iterating through the particle stack for these simple quantities
        int        nproton  = 0;    ///< number of (post-FSI) primary protons
