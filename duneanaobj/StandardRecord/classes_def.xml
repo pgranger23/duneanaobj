@@ -282,7 +282,6 @@
     <version ClassVersion="10" checksum="3381095522"/>
   </class>
 
-  <enum name="caf::G4Process" ClassVersion="10" />
   <enum name="caf::Generator" ClassVersion="10" />
   <enum name="caf::ScatteringMode" ClassVersion="10" />
 

@@ -9,7 +9,6 @@
 namespace caf
 {
   template class Proxy<Detector>;
-  template class Proxy<G4Process>;
   template class Proxy<Generator>;
   template class Proxy<PartEMethod>;
   template class Proxy<ScatteringMode>;
