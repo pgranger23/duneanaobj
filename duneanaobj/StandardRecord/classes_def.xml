@@ -274,7 +274,8 @@
    <version ClassVersion="10" checksum="2662412328"/>
   </class>
 
-  <class name="caf::SRTrueParticle" ClassVersion="14">
+  <class name="caf::SRTrueParticle" ClassVersion="15">
+   <version ClassVersion="15" checksum="1980366129"/>
    <version ClassVersion="14" checksum="1907525372"/>
    <version ClassVersion="13" checksum="1852140823"/>
    <version ClassVersion="12" checksum="941873740"/>
