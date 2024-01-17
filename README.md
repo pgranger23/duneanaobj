@@ -14,6 +14,11 @@ CAFs are intended to have a low barrier-to-entry and be easy to use.
 The only requirements for reading them are ROOT and the format description,
 i.e., the `StandardRecord` object contained in this package.
 
+If you're just looking for documentation on what's in a `StandardRecord`, 
+have a look at the [Doxygen documentation pages](https://dune.github.io/duneanaobj/classcaf_1_1StandardRecord.html)
+automatically generated from this repository.
+(They are automatically updated whenever the `main` branch is using a GitHub Actions workflow.)
+
 ## Setting up `duneanaobj` for use 
 
 In order to work with CAFs, you'll need to have the libraries from this package accessible to the software you want to read the CAFs with.
