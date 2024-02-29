@@ -19,7 +19,7 @@ if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
 
     if (DEFINED ENV{MRB_BUILDDIR} AND NOT "$ENV{MRB_BUILDDIR}" STREQUAL "")
         message(STATUS "MRB_BUILDDIR = $ENV{MRB_BUILDDIR}")
-        set(builddir $ENV{MRB_BUILDDIR})
+        set(builddir $ENV{MRB_BUILDDIR}/duneanaobj)
     else()
         set(builddir ${CMAKE_BINARY_DIR})
     endif()
