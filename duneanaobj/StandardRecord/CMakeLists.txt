@@ -2,7 +2,7 @@ add_subdirectory(Proxy)
 add_subdirectory(Flat)
 
 # for classes_def.xml!!
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR} ) ### MIGRATE-ACTION-RECOMMENDED (migrate-3.22.02) - avoid directory-scope functions: use target_link_libraries() with target semantics or target_include_directories() whenever possible
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
 
 set( PACKAGE duneanaobj_StandardRecord )
 FILE( GLOB src_files *.cxx )
@@ -24,7 +24,7 @@ if(DEFINED CETMODULES_CURRENT_PROJECT_NAME)
     install_source()
 else()
     add_library(duneanaobj_StandardRecord
-                ${src_files}) ### MIGRATE-ACTION-REQUIRED (migrate-3.22.02) - avoid: use cet_make_library() or cet_build_plugin() for automatic transitivity
+                ${src_files})
     target_link_libraries(duneanaobj_StandardRecord
                      ROOT::Core ROOT::Physics )
 

@@ -13,10 +13,10 @@
 # ======================================================================
 
 
-cmake_minimum_required (VERSION 3.20 FATAL_ERROR) ### MIGRATE-CHANGED (migrate-3.22.02) - VERSION 3.12...3.18 -> 3.20
-# cmake_policy(VERSION 3.18) ### MIGRATE-ACTION-COMPATIBILITY (migrate-3.22.02) - Uncomment to preserve compatibility with older CMake versions
+cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
+# cmake_policy(VERSION 3.18)
 
-find_package(cetmodules REQUIRED) ### MIGRATE-ADDED (migrate-3.22.02) - find_package(cetmodules) must precede project()
+find_package(cetmodules REQUIRED)
 project(duneanaobj LANGUAGES CXX)
 set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 03.03.00)
 
@@ -42,10 +42,10 @@ if(DEFINED ENV{UPS_DIR})
       EXTRA_FLAGS -pedantic -Wno-unused-local-typedefs -Wno-undefined-var-template -I $ENV{CLANG_FQ_DIR}/include/c++/v1
     )
 
-    cet_report_compiler_flags() ### MIGRATE-ACTION-RECOMMENDED (migrate-3.22.02) - add args: REPORT_THRESHOLD VERBOSE
+    cet_report_compiler_flags()
 
     # these are minimum required versions, not the actual product versions
-    find_package(ROOT 6.00.00 REQUIRED) ### MIGRATE-CHANGED (migrate-3.22.02) - find_ups_product(v6_00_00 ...) -> find_package(ROOT 6.00.00 REQUIRED ...)
+    find_package(ROOT 6.00.00 REQUIRED)
 
     include(BuildDictionary)
 
@@ -54,9 +54,9 @@ if(DEFINED ENV{UPS_DIR})
 
 else()
     find_package(ROOT)
-    include_directories(.) ### MIGRATE-ACTION-RECOMMENDED (migrate-3.22.02) - avoid directory-scope functions: use target_link_libraries() with target semantics or target_include_directories() whenever possible
+    include_directories(.)
 endif()
 
 add_subdirectory(duneanaobj)
 
-cet_cmake_config() ### MIGRATE-ADDED (migrate-3.22.02) - required cmd
+cet_cmake_config()
