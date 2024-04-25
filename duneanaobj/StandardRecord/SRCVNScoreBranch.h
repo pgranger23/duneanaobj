@@ -16,7 +16,7 @@ namespace caf
       static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();
 
     public:
-      bool isnubar = false;
+      float isnubar = NaN;
 
       float nue   = NaN;
       float numu  = NaN;
