@@ -74,13 +74,15 @@
    <version ClassVersion="10" checksum="3470794688"/>
   </class>
 
-  <class name="caf::SRCVNScoreBranch" ClassVersion="12">
+  <class name="caf::SRCVNScoreBranch" ClassVersion="13">
+   <version ClassVersion="13" checksum="666901575"/>
    <version ClassVersion="12" checksum="1622576569"/>
    <version ClassVersion="11" checksum="666901575"/>
    <version ClassVersion="10" checksum="1622576569"/>
   </class>
 
-  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="12">
+  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="13">
+   <version ClassVersion="13" checksum="3582001491"/>
    <version ClassVersion="12" checksum="1372801074"/>
    <version ClassVersion="11" checksum="3582001491"/>
    <version ClassVersion="10" checksum="1372801074"/>
