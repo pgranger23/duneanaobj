@@ -19,6 +19,9 @@ namespace caf
     public:
       float calo     = NaN;  ///< Calorimetric estimate using all hits
       float lep_calo = NaN;  ///< Lepton (longest track or largest shower) + calorimetric estimate from remaining hits
+      float mu_range = NaN;  ///< Muon (longest track) using the stopping range + calorimetric estimate from the remaining hits
+      float mu_mcs   = NaN;  ///< Muon (longest track) using the Multiple Coulomb Scattering + calorimetric estimate from the remaining hits
+      float e_calo   = NaN;  ///< Electron (highest energy shower) + calorimetric estimate from the remaining hits
       float regcnn   = NaN;  ///< Regression CNN (assumes nue hypothesis)
   };
 

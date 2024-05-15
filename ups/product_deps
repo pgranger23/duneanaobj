@@ -1,5 +1,16 @@
 ########################################################################
 # product_deps
+=======
+# This @product_deps@ file defines dependencies for this package.
+
+# The *parent* line must the first non-commented line and defines the product name
+
+parent duneanaobj
+defaultqual e26
+
+# These optional lines define the installed directories where headers,
+# libraries, and executables will be found.
+# Use them only if your product does not conform to the defaults
 #
 #   Define attributes of a package to be built and distributed as a UPS
 #   product.
@@ -313,6 +324,18 @@ e20:debug	e20:p3915:debug	py3915
 e20:prof	e20:p3915:prof	py3915
 e26:debug	e26:p3915:debug	py3915
 e26:prof	e26:p3915:prof	py3915
+=======
+# We now define allowed qualifiers and the corresponding qualifiers for the dependencies.
+# Make the table by adding columns before "notes".
+
+qualifier      root       srproxy       notes
+e26:debug  debug:e26:p3915 py3915
+e26:prof   e26:p3915:prof  py3915
+c14:debug  c14:p3915:debug  py3915
+c14:prof   c14:p3915:prof   py3915
+e20:debug  debug:e20:p3915 py3915
+e20:prof   e20:p3915:prof  py3915
+>>>>>>> main
 end_qualifier_list
 ####################################
 
