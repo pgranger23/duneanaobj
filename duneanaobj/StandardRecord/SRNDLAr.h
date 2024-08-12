@@ -9,6 +9,7 @@
 
 #include "duneanaobj/StandardRecord/SRTrack.h"
 #include "duneanaobj/StandardRecord/SRShower.h"
+#include "duneanaobj/StandardRecord/SROpticalFlash.h"
 
 namespace caf
 {
@@ -21,6 +22,7 @@ namespace caf
 
       std::vector<SRShower> showers;
       std::size_t           nshowers = 0;
+      
   };
 
   /// The information needed to uniquely identify an ND-LAr reco object
@@ -40,7 +42,8 @@ namespace caf
       std::size_t ndlp = 0;
       std::vector<SRNDLArInt> pandora;   ///< Reconstructed interactions from Pandora
       std::size_t npandora = 0;
-
+      std::vector<SROpticalFlash> flashes;      ///< Collection of flashes
+      std::size_t                 nflashes = 0;
       /// Convenience function for use mainly with SRNDTrackAssn.
       /// Given a specific reco pathway (specified with a SRNDLAr::RECO_STACK value),
       /// an interaction index, and a track index, return the associated reco object

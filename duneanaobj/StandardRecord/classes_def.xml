@@ -196,12 +196,15 @@
   <class name="std::vector<caf::SRNDTrackAssn>">
   </class>
 
-  <class name="caf::SRNDLAr" ClassVersion="11">
+  <class name="caf::SRNDLAr" ClassVersion="12">
+   <version ClassVersion="12" checksum="620685221"/>
    <version ClassVersion="11" checksum="1183768120"/>
    <version ClassVersion="10" checksum="3845592869"/>
   </class>
 
-  <class name="caf::SRNDLArInt" ClassVersion="10">
+  <class name="caf::SRNDLArInt" ClassVersion="12">
+   <version ClassVersion="12" checksum="947356810"/>
+   <version ClassVersion="11" checksum="1873045675"/>
    <version ClassVersion="10" checksum="947356810"/>
   </class>
 
