@@ -23,7 +23,7 @@ namespace caf
       std::vector<SRShower> showers;
       std::size_t           nshowers = 0;
       
-      std::vector<FlashMatch> flash;        ///< Associated SROpticalFlash
+      std::vector<FlashMatch> flash;        ///< Attributes of matched flash
       
   };
 
