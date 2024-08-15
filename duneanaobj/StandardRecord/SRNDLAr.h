@@ -23,6 +23,8 @@ namespace caf
       std::vector<SRShower> showers;
       std::size_t           nshowers = 0;
       
+      std::vector<FlashMatch> flash;        ///< Associated SROpticalFlash
+      
   };
 
   /// The information needed to uniquely identify an ND-LAr reco object

@@ -5,8 +5,8 @@ namespace caf
   template <typename T>
   const T & SRNDLAr::Reco(const SRNDLArID& id)
   {
-    static_assert(std::is_same_v<T, SRTrack> || std::is_same_v<T, SRShower>, 
-                  "Reco() only knows about SRTrack, SRShower");
+    static_assert(std::is_same_v<T, SRTrack> || std::is_same_v<T, SRShower>,
+                  "Reco() only knows about SRTrack and SRShower");
 
     const std::vector<SRNDLArInt> * ints = nullptr;
     if (id.reco == kDeepLearnPhys)

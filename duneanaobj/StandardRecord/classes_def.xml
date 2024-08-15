@@ -202,7 +202,8 @@
    <version ClassVersion="10" checksum="3845592869"/>
   </class>
 
-  <class name="caf::SRNDLArInt" ClassVersion="12">
+  <class name="caf::SRNDLArInt" ClassVersion="13">
+   <version ClassVersion="13" checksum="1379574528"/>
    <version ClassVersion="12" checksum="947356810"/>
    <version ClassVersion="11" checksum="1873045675"/>
    <version ClassVersion="10" checksum="947356810"/>
