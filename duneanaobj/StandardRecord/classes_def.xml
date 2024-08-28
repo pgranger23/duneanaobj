@@ -42,7 +42,8 @@
    <version ClassVersion="10" checksum="175116589"/>
   </class>
 
-  <class name="caf::SRDetectorMeta" ClassVersion="11">
+  <class name="caf::SRDetectorMeta" ClassVersion="12">
+   <version ClassVersion="12" checksum="989983909"/>
    <version ClassVersion="11" checksum="810717581"/>
    <version ClassVersion="10" checksum="2557124789"/>
   </class>
