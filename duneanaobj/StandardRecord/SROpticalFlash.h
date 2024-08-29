@@ -20,7 +20,7 @@ namespace caf
     public:
       int    id            = -1;     ///< id of the flash>
       int    tpc_id        = -1;     ///< id of the TPC>
-      double time          = NaN;    ///< time of the flash w.r.t. trigger time time in s
+      double time          = NaN;    ///< time of the flash w.r.t. trigger time in s
       double time_width    = NaN;    ///< width of the flash in s
       float  total_pe      = NaN;    ///< total photoelectrons recorded by all the channels
       
