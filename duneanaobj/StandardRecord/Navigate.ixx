@@ -22,5 +22,13 @@ namespace caf
       throw std::domain_error("Unknown PartType: " + std::to_string(id.type));
   }
 
+  template <typename TruthBranchType>
+  const typename std::conditional<std::is_same_v<TruthBranchType, SRTruthBranch>, SRTrueInteraction, SRTrueInteractionProxy>::type * 
+  FindInteraction(const TruthBranchType & truth,  long int id){
+    if (id < 0)
+      return nullptr;
+
+    return &truth.nu[id];
+  }
 
 }

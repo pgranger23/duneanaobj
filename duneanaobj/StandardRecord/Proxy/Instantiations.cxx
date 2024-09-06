@@ -23,4 +23,5 @@ namespace caf
   template class Proxy<TrueParticleID::PartType>;
 
   template const SRTrueParticleProxy * FindParticle(const SRTruthBranchProxy & truth, const TrueParticleIDProxy & id);
+  template const SRTrueInteractionProxy * FindInteraction(const SRTruthBranchProxy & truth,  long int id);
 }
