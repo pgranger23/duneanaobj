@@ -5,13 +5,13 @@ GenSRProxy(
   PROLOG ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h
   EPILOG_FWD ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h
   EPILOG ${CMAKE_CURRENT_SOURCE_DIR}/Epilog.h
-  INCLUDE_DIRS ${CMAKE_SOURCE_DIR} ${ROOT_INCLUDE_DIRS}
+  INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../../.. ${ROOT_INCLUDE_DIRS}
   DEPENDENCIES ${SR_HEADER_FILE_FQPS})
 
 add_library(duneanaobj_StandardRecordProxy SHARED SRProxy.cxx)
 target_link_libraries(duneanaobj_StandardRecordProxy PUBLIC SRProxy_BasicTypes)
 target_include_directories(duneanaobj_StandardRecordProxy PUBLIC 
-  $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../..>
   $<INSTALL_INTERFACE:include>)
 
 install(TARGETS duneanaobj_StandardRecordProxy EXPORT duneanaobj_targets DESTINATION lib)
