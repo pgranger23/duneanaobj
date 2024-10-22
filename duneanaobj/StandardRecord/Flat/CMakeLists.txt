@@ -8,7 +8,7 @@ GenSRProxy(
   DEPENDENCIES ${SR_HEADER_FILE_FQPS})
 
 add_library(duneanaobj_StandardRecordFlat SHARED SRFlat.cxx)
-target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC SRProxy_BasicTypes)
+target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC SRProxy::FlatTypes)
 target_include_directories(duneanaobj_StandardRecordFlat PUBLIC 
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../..>
   $<INSTALL_INTERFACE:include>)
