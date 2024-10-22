@@ -1,42 +1,42 @@
 @PACKAGE_INIT@
 
-set(DUNEANAOBJ_VERSION @PROJECT_VERSION@)
+set(duneanaobj_VERSION @PROJECT_VERSION@)
 
-find_package(SRProxy REQUIRED)
+find_package(SRProxy @SRProxy_MIN_VERSION@ REQUIRED)
 
-set(DUNEANAOBJ_CXX_STANDARD @DUNEANAOBJ_CXX_STANDARD@)
+set(duneanaobj_CXX_STANDARD @duneanaobj_CXX_STANDARD@)
 
-set(DUNEANAOBJ_FOUND TRUE)
+set(duneanaobj_FOUND TRUE)
 
 include(${CMAKE_CURRENT_LIST_DIR}/duneanaobjTargets.cmake)
-if(NOT TARGET duneanaobj::All)
-  message(WARNING "Expected to find target duneanaobj::All in ${CMAKE_CURRENT_LIST_DIR}/duneanaobjTargets.cmake")
-  set(DUNEANAOBJ_FOUND FALSE)
+if(NOT TARGET duneanaobj::all)
+  message(WARNING "Expected to find target duneanaobj::all in ${CMAKE_CURRENT_LIST_DIR}/duneanaobjTargets.cmake")
+  set(duneanaobj_FOUND FALSE)
   return()
 endif()
 
-get_filename_component(DUNEANAOBJ_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(duneanaobj_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 
-find_path(DUNEANAOBJ_INCLUDE_DIR
+find_path(duneanaobj_INCLUDE_DIR
   NAMES duneanaobj/StandardRecord/StandardRecord.h
-  PATHS ${DUNEANAOBJ_CMAKE_DIR}/../../../include
+  PATHS ${duneanaobj_CMAKE_DIR}/../../../include
 )
 
-find_path(DUNEANAOBJ_LIB_DIR
-  NAMES libDUNEANAOBJ_StandardRecord.so
-  PATHS ${DUNEANAOBJ_CMAKE_DIR}/../../
+find_path(duneanaobj_LIB_DIR
+  NAMES libduneanaobj_StandardRecord.so
+  PATHS ${duneanaobj_CMAKE_DIR}/../../
 )
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(duneanaobj
     REQUIRED_VARS 
-      DUNEANAOBJ_INCLUDE_DIR 
-      DUNEANAOBJ_LIB_DIR
+      duneanaobj_INCLUDE_DIR 
+      duneanaobj_LIB_DIR
     VERSION_VAR 
-      DUNEANAOBJ_VERSION
+      duneanaobj_VERSION
 )
 
-message(STATUS "Found duneanaobj Version: ${DUNEANAOBJ_VERSION} in \"${DUNEANAOBJ_CMAKE_DIR}\"")
-message(STATUS "    DUNEANAOBJ_CXX_STANDARD: ${DUNEANAOBJ_CXX_STANDARD}")
-message(STATUS "    DUNEANAOBJ_INCLUDE_DIR: ${DUNEANAOBJ_INCLUDE_DIR}")
-message(STATUS "    DUNEANAOBJ_LIB_DIR: ${DUNEANAOBJ_LIB_DIR}")
+message(STATUS "Found duneanaobj Version: ${duneanaobj_VERSION} in \"${duneanaobj_CMAKE_DIR}\"")
+message(STATUS "    duneanaobj_CXX_STANDARD: ${duneanaobj_CXX_STANDARD}")
+message(STATUS "    duneanaobj_INCLUDE_DIR: ${duneanaobj_INCLUDE_DIR}")
+message(STATUS "    duneanaobj_LIB_DIR: ${duneanaobj_LIB_DIR}")
