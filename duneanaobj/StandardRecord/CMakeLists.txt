@@ -75,12 +75,17 @@ SET(SR_HEADER_FILES
 
 add_library(duneanaobj_StandardRecord SHARED ${SR_IMPL_FILES})
 target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::MathCore)
-target_include_directories(duneanaobj_StandardRecord PUBLIC ${CMAKE_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
-install(TARGETS duneanaobj_StandardRecord DESTINATION lib)
+target_include_directories(duneanaobj_StandardRecord PUBLIC 
+  $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}> $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<INSTALL_INTERFACE:include>)
+set_target_properties(duneanaobj_StandardRecord PROPERTIES EXPORT_NAME StandardRecord)
+install(TARGETS duneanaobj_StandardRecord EXPORT duneanaobj_targets DESTINATION lib)
 install(FILES 
     ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict_rdict.pcm 
     ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict.rootmap 
   DESTINATION lib)
+
+add_library(duneanaobj::StandardRecord ALIAS duneanaobj_StandardRecord)
 
 # get the location of these to allow the code generation scripts to properly set up
 # dependencies
