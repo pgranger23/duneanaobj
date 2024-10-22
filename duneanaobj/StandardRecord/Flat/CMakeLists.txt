@@ -4,13 +4,13 @@ GenSRProxy(
   OUTPUT_NAME SRFlat
   TARGETNAME caf::StandardRecord
   PROLOG ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h
-  INCLUDE_DIRS ${CMAKE_SOURCE_DIR} ${ROOT_INCLUDE_DIRS}
+  INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../../.. ${ROOT_INCLUDE_DIRS}
   DEPENDENCIES ${SR_HEADER_FILE_FQPS})
 
 add_library(duneanaobj_StandardRecordFlat SHARED SRFlat.cxx)
 target_link_libraries(duneanaobj_StandardRecordFlat PUBLIC SRProxy_BasicTypes)
 target_include_directories(duneanaobj_StandardRecordFlat PUBLIC 
-  $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../..>
   $<INSTALL_INTERFACE:include>)
 
 install(TARGETS duneanaobj_StandardRecordFlat EXPORT duneanaobj_targets DESTINATION lib)

@@ -1,16 +1,16 @@
 execute_process(COMMAND git rev-parse --short=8 HEAD
-  WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} 
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../.. 
   OUTPUT_VARIABLE duneanaobj_GITSHORTHASH8
   RESULT_VARIABLE GIT_CMD_SUCCESS
   OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 if(NOT GIT_CMD_SUCCESS EQUAL 0)
-  message(FATAL_ERROR "Failed to run git rev-parse --short=8 HEAD in ${CMAKE_SOURCE_DIR}")
+  message(FATAL_ERROR "Failed to run git rev-parse --short=8 HEAD in ${CMAKE_CURRENT_SOURCE_DIR}/../..")
 endif()
 
 configure_file(StandardRecord.cxx.in ${CMAKE_CURRENT_BINARY_DIR}/StandardRecord.cxx @ONLY)
 
-include_directories(${CMAKE_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../..)
 
 ROOT_GENERATE_DICTIONARY(StandardRecordDict StandardRecord.h
   LINKDEF classes_def.xml)
@@ -76,7 +76,7 @@ SET(SR_HEADER_FILES
 add_library(duneanaobj_StandardRecord SHARED ${SR_IMPL_FILES})
 target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::MathCore)
 target_include_directories(duneanaobj_StandardRecord PUBLIC 
-  $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}> $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../..> $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   $<INSTALL_INTERFACE:include>)
 set_target_properties(duneanaobj_StandardRecord PROPERTIES EXPORT_NAME StandardRecord)
 install(TARGETS duneanaobj_StandardRecord EXPORT duneanaobj_targets DESTINATION lib)
