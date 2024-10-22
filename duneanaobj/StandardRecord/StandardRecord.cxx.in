@@ -5,8 +5,8 @@
 namespace caf
 {
   StandardRecord::StandardRecord() :
-    duneanaobj_gitshorthash("@DUNEANAOBJ_GITSHORTHASH8@"),
-    duneanaobj_version{@DUNEANAOBJ_VERSION_MAJOR@,@DUNEANAOBJ_VERSION_MINOR@,@DUNEANAOBJ_VERSION_PATCH@}
+    duneanaobj_gitshorthash("@duneanaobj_GITSHORTHASH8@"),
+    duneanaobj_version{@duneanaobj_VERSION_MAJOR@,@duneanaobj_VERSION_MINOR@,@duneanaobj_VERSION_PATCH@}
   {
   }
 
