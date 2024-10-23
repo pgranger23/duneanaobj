@@ -4,9 +4,9 @@ GenSRProxy(
   TARGETNAME caf::StandardRecord
   PROLOG ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h
   EPILOG_FWD ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h
-  EPILOG ${CMAKE_CURRENT_SOURCE_DIR}/Epilog.h
   INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../../.. ${ROOT_INCLUDE_DIRS}
-  DEPENDENCIES ${SR_HEADER_FILE_FQPS})
+  DEPENDENCIES ${SR_HEADER_FILE_FQPS}
+  VVERBOSE)
 
 add_library(duneanaobj_StandardRecordProxy SHARED SRProxy.cxx)
 target_link_libraries(duneanaobj_StandardRecordProxy PUBLIC SRProxy::BasicTypes)

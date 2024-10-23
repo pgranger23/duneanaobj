@@ -1,1 +1,0 @@
-template class caf::Proxy<caf::StandardRecord>;
