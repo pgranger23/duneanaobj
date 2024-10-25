@@ -83,6 +83,7 @@ target_include_directories(duneanaobj_StandardRecord PRIVATE
   )
 set_target_properties(duneanaobj_StandardRecord PROPERTIES EXPORT_NAME StandardRecord)
 install(TARGETS duneanaobj_StandardRecord EXPORT duneanaobj_targets DESTINATION lib)
+install(FILES ${SR_HEADER_FILES} DESTINATION include/duneanaobj/StandardRecord)
 install(FILES 
     ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict_rdict.pcm 
     ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict.rootmap 
