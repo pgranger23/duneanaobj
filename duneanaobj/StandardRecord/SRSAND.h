@@ -10,6 +10,7 @@
 #include "duneanaobj/StandardRecord/SRTrack.h"
 #include "duneanaobj/StandardRecord/SRShower.h"
 #include "duneanaobj/StandardRecord/SRRecoParticle.h"
+#include "duneanaobj/StandardRecord/SRECALCluster.h"
 
 
 namespace caf
@@ -23,6 +24,9 @@ namespace caf
 
       std::vector<SRShower> showers;
       std::size_t           nshowers = 0;
+
+      std::vector<SRECALCluster> ECALClusters; 
+      std::size_t          nclusters=0;
   };
 
   /// SAND reconstruction output
@@ -37,7 +41,7 @@ namespace caf
       };
 
       std::size_t nixn = 0;
-      std::vector<SRGArInt> ixn;       ///< Reconstructed interactions
+      std::vector<SRSANDInt> ixn;       ///< Reconstructed interactions
 
     };
 
