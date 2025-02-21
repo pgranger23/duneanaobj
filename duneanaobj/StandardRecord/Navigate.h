@@ -23,5 +23,12 @@ namespace caf
   const typename std::conditional<std::is_same_v<TruthBranchType, SRTruthBranch>,
                                   SRTrueParticle, SRTrueParticleProxy>::type *
     FindParticle(const TruthBranchType & truth, const TrueParticleIDType &id);
+
+  class SRTrueInteraction;
+  using SRTrueInteractionProxy = caf::Proxy<caf::SRTrueInteraction>;
+  template <typename TruthBranchType>
+  const typename std::conditional<std::is_same_v<TruthBranchType, SRTruthBranch>, 
+                                  SRTrueInteraction, SRTrueInteractionProxy>::type * 
+    FindInteraction(const TruthBranchType & truth,  long int id);
 }
 #endif //DUNEANAOBJ_NAVIGATE_H
