@@ -20,6 +20,8 @@ namespace caf
   /// (The horrible return type construction is so that the return type can be deduced automatically
   ///  and thus avoids having to have the user specify a template parameter for it.)
   template <typename TruthBranchType, typename TrueParticleIDType>
-  const typename std::conditional<std::is_same_v<TruthBranchType, SRTruthBranch>, SRTrueParticle, SRTrueParticleProxy>::type * FindParticle(const TruthBranchType & truth, const TrueParticleIDType &id);
+  const typename std::conditional<std::is_same_v<TruthBranchType, SRTruthBranch>,
+                                  SRTrueParticle, SRTrueParticleProxy>::type *
+    FindParticle(const TruthBranchType & truth, const TrueParticleIDType &id);
 }
 #endif //DUNEANAOBJ_NAVIGATE_H
