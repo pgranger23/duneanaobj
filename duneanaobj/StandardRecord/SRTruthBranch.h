@@ -19,9 +19,6 @@ namespace caf
       /// Vector of true nus, cosmics, etc. contributing to this trigger
       std::vector<SRTrueInteraction> nu;
       std::size_t nnu = 0;
-
-      /// Convenience method to find a  particle stored by its ID easily
-      const SRTrueParticle * Particle(const TrueParticleID & id) const;
   };
 
 } // caf
