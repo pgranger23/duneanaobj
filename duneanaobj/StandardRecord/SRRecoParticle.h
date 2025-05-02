@@ -40,6 +40,9 @@ namespace caf
       // todo: would we prefer some kind of "extents" thing so that we can make a decision about containment later?
       //       or should this be the responsibility of the reco module?  (what about stuff that crosses detector boundaries?...)
       bool        contained = false;
+      float       walldist = NaN;                   ///< Distance to the nearest wall of the detector [cm]
+
+      bool        istrack = false;                  ///< Is this a track or a shower?
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco particle and true particle

@@ -22,6 +22,10 @@ namespace caf
       float mu_range = NaN;  ///< Muon (longest track) using the stopping range + calorimetric estimate from the remaining hits
       float mu_mcs   = NaN;  ///< Muon (longest track) using the Multiple Coulomb Scattering + calorimetric estimate from the remaining hits
       float e_calo   = NaN;  ///< Electron (highest energy shower) + calorimetric estimate from the remaining hits
+
+      float e_had = NaN;  ///< Hadronic energy (calorimetric estimate from all hits)
+      float e_lep = NaN;  ///< Leptonic energy (calorimetric estimate from all hits)
+
       float regcnn   = NaN;  ///< Regression CNN (assumes nue hypothesis)
   };
 

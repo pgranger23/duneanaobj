@@ -21,7 +21,8 @@ namespace caf
       std::vector<SRInteraction> pandora;   ///< Interactions from Pandora reconstruction
       std::size_t npandora;
 
-
+      bool isselected = true; ///< Is this interaction selected by the analysis?
+      bool iscontained = true; ///< Is this interaction contained in the fiducial volume?
   };
 }
 

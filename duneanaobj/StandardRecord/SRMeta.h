@@ -26,6 +26,8 @@ namespace caf
       /// detector-dependent trigger type for the relevant readout window
       int triggertype = -1;
 
+      bool istriggered = true; ///< Was the event triggered by this detector?
+
       unsigned long int readoutstart_s   = 0;   ///< GPS time of trigger readout start, seconds part
       unsigned int      readoutstart_ns  = 0;   ///< GPS time of trigger readout start, nanoseconds part
       unsigned long int readoutend_s     = 0;   ///< GPS time of trigger readout end, seconds part
