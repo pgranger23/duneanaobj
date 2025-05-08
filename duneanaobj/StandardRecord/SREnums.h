@@ -131,6 +131,17 @@ namespace caf
     kPandoraNDLAr
   };
 
+  /// \brief What is the type of the reconstructed object?
+  /// This is used to help with the association of reconstructed particles
+  /// to underlying reconstructed objects.
+  enum RecoObjType
+  {
+    kUnknownRecoObj = -1, ///< default value
+    kTrack          = 1,  ///< track
+    kShower         = 2,  ///< shower
+    kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
+  };
+
 }
 
 
