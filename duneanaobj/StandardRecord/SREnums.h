@@ -140,7 +140,7 @@ namespace caf
     kTrack          = 1,  ///< track
     kShower         = 2,  ///< shower
     kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
-  }
+  };
 
 }
 

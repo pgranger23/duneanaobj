@@ -42,7 +42,8 @@
    <version ClassVersion="10" checksum="175116589"/>
   </class>
 
-  <class name="caf::SRDetectorMeta" ClassVersion="12">
+  <class name="caf::SRDetectorMeta" ClassVersion="13">
+   <version ClassVersion="13" checksum="3486371400"/>
    <version ClassVersion="12" checksum="989983909"/>
    <version ClassVersion="11" checksum="810717581"/>
    <version ClassVersion="10" checksum="2557124789"/>
@@ -62,12 +63,14 @@
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
-  <class name="caf::SRInteraction" ClassVersion="11">
+  <class name="caf::SRInteraction" ClassVersion="12">
+   <version ClassVersion="12" checksum="2000195876"/>
    <version ClassVersion="11" checksum="1154108588"/>
    <version ClassVersion="10" checksum="2468658506"/>
   </class>
 
-  <class name="caf::SRDirectionBranch" ClassVersion="10">
+  <class name="caf::SRDirectionBranch" ClassVersion="11">
+   <version ClassVersion="11" checksum="2218604191"/>
    <version ClassVersion="10" checksum="2433306859"/>
   </class>
 
@@ -82,7 +85,8 @@
    <version ClassVersion="10" checksum="1622576569"/>
   </class>
 
-  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="13">
+  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="14">
+   <version ClassVersion="14" checksum="1104425802"/>
    <version ClassVersion="13" checksum="3582001491"/>
    <version ClassVersion="12" checksum="1372801074"/>
    <version ClassVersion="11" checksum="3582001491"/>
@@ -94,7 +98,8 @@
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="14">
+  <class name="caf::SRRecoParticle" ClassVersion="15">
+   <version ClassVersion="15" checksum="4130745478"/>
    <version ClassVersion="14" checksum="621972464"/>
    <version ClassVersion="13" checksum="2634132066"/>
    <version ClassVersion="12" checksum="223390088"/>
