@@ -23,8 +23,8 @@ namespace caf
       float mu_mcs   = NaN;  ///< Muon (longest track) using the Multiple Coulomb Scattering + calorimetric estimate from the remaining hits
       float e_calo   = NaN;  ///< Electron (highest energy shower) + calorimetric estimate from the remaining hits
 
-      float e_had = NaN;  ///< Hadronic energy (calorimetric estimate from all hits)
-      float e_lep = NaN;  ///< Leptonic energy (calorimetric estimate from all hits)
+      float e_had = NaN;  ///< NuE hadronic energy (calorimetric estimate from all non-primary-shower hits)
+      float mu_had = NaN;  ///< NuMu hadronic energy (calorimetric estimate from all non-primary-track hits)
 
       float regcnn   = NaN;  ///< Regression CNN (assumes nue hypothesis)
   };

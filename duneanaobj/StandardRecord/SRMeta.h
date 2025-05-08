@@ -26,7 +26,7 @@ namespace caf
       /// detector-dependent trigger type for the relevant readout window
       int triggertype = -1;
 
-      bool istriggered = true; ///< Was the event triggered by this detector?
+      bool triggered = true; ///< Was the event triggered by this detector?  (Useful in contexts where all simulated events are reconstructed, and triggering simulation was applied separately)
 
       unsigned long int readoutstart_s   = 0;   ///< GPS time of trigger readout start, seconds part
       unsigned int      readoutstart_ns  = 0;   ///< GPS time of trigger readout start, nanoseconds part
