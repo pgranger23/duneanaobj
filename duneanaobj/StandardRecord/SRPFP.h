@@ -13,7 +13,7 @@
 
 namespace caf
 {
-  class SRSPFP
+  class SRPFP
   {
     public:
       // less typing further below

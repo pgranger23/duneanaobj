@@ -25,5 +25,5 @@ namespace caf
   // explicitly instantiate the template
   template const SRTrack & SRFD::Reco<SRTrack>(const SRFDID& id);
   template const SRShower & SRFD::Reco<SRShower>(const SRFDID& id);
-  template const SRPFP & SRFD::Reco<SRPFP>(const SRPFP& id);
+  template const SRPFP & SRFD::Reco<SRPFP>(const SRFDID& id);
 }
