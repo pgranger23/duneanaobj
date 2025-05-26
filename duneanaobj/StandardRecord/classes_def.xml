@@ -159,7 +159,7 @@
    </class>
 
   <class name="caf::SRPFP" ClassVersion="10">
-   <version ClassVersion="10" checksum="1434923241"/>
+   <version ClassVersion="10" checksum="3744464743"/>
   </class>
 
   <class name="std::vector<caf::SRPFP>">

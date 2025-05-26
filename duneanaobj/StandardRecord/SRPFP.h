@@ -21,7 +21,7 @@ namespace caf
 
       int nhits_U = 0;
       int nhits_V = 0;
-      int nhist_W = 0;
+      int nhits_W = 0;
       int nhits_3D = 0;
 
       //LArPfoHierarchyFeatureTool
@@ -50,15 +50,6 @@ namespace caf
 
       //Track/Shower BDT score
       float track_score = NaN;
-
-      float michel_electron_mva = NaN;
-      float michel_reco_energy_W = NaN;
-      float deflec_angle_SD = NaN;
-      float concentration = NaN;
-      float core_halo_ratio = NaN;
-      float conicalness = NaN;
-      float dedx_start = NaN;
-      float dedx_end = NaN;
   };
 
 }
