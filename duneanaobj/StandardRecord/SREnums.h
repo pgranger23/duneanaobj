@@ -49,7 +49,13 @@ namespace caf
     kUnknownGenerator = 0,
     kGENIE            = 1,
     kGIBUU            = 2,
-    kNEUT             = 3
+    kNEUT             = 3,
+    kCRY              = 4,
+    kNuWro            = 5,
+    kMARLEY           = 6,
+    kCORSIKA          = 7,
+    kGEANT            = 8
+
   };
 
   /// Methods for reconstructing particle energies.
