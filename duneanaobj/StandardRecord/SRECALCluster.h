@@ -22,7 +22,7 @@ namespace caf
       float time; ///< Cluster time weighted on energy [ns]
       SRVector3D start;      ///< Cluster 3D start point [cm]
       SRVector3D direction;  ///< Cluster directiion versor 
-      float E = -999.;    ///< Reconstructed energy [MeV] 
+      float E;    ///< Reconstructed energy [MeV] 
       int num_cells; ///< Total number of cells in the cluster
 
       std::vector<TrueParticleID> truth;              ///< Associated SRTrueParticle(s), if relevant (use SRTruthBranch::Particle() with these IDs to grab them)
