@@ -85,7 +85,8 @@
    <version ClassVersion="10" checksum="1622576569"/>
   </class>
 
-  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="14">
+  <class name="caf::SRNeutrinoEnergyBranch" ClassVersion="15">
+   <version ClassVersion="15" checksum="3331961107"/>
    <version ClassVersion="14" checksum="1104425802"/>
    <version ClassVersion="13" checksum="3582001491"/>
    <version ClassVersion="12" checksum="1372801074"/>
