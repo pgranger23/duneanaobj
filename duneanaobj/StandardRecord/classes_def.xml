@@ -280,6 +280,10 @@
    <version ClassVersion="10" checksum="87138233"/>
   </class>
 
+  <class name="caf::SRMINERvAID"  ClassVersion="10">
+   <version ClassVersion="10" checksum="4040824592"/>
+  </class>
+
   <!-- - - - - - - - - - Truth - - - - - - - - - - - - - - - -->
 
   <class name="caf::SRTruthBranch" ClassVersion="10">
@@ -313,5 +317,12 @@
   <enum name="caf::Generator" ClassVersion="10" />
   <enum name="caf::ScatteringMode" ClassVersion="10" />
 
+
+ <class name="caf::FlashMatch" ClassVersion="10">
+  <version ClassVersion="10" checksum="417345908"/>
+ </class>
+ <class name="caf::SROpticalFlash" ClassVersion="10">
+  <version ClassVersion="10" checksum="3730213350"/>
+ </class>
 
 </lcgdict>
