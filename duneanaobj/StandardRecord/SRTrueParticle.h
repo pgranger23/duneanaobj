@@ -28,7 +28,7 @@ namespace caf
       int       pdg             = 0;     ///< Particle
       int       G4ID            = -1;    ///< ID of the particle (taken from GEANT4 -- -1 if this particle is not propogated by G4)
       long int  interaction_id  = -1;    ///< True interaction ID (edep-sim 'vertexID' for ND, or GENIe record number for FD) of the source of this particle
-      float     time            = NaN;   ///< Generation time at true interaction vertex [ns]
+      double     time            = NaN;   ///< Generation time at true interaction vertex [ns]
 
       TrueParticleID  ancestor_id;      ///< The primary particle this particle descended from, if relevant
 
