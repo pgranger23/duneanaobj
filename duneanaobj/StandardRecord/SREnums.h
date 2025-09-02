@@ -131,7 +131,7 @@ namespace caf
     kPandoraNDLAr
   };
 
-    enum MatchType
+    enum NDRecoMatchType
   {
     kUndeclared = 0, ///< default value
     kSimple = 1,  ///< match performed using Kate Hildebrandt's "simple" matching algorithm
