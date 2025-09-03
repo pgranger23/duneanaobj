@@ -28,7 +28,7 @@ namespace caf
       float angdispl    = NaN;     ///< angular difference between the two tracks at longitudinal position of matching point
       float matchScore  = NaN;     ///< quantifies how well a LAr and TMS track match each other
 
-      MatchType matchType = caf::MatchType::kUndeclared; ///< specifies how the match was performed
+      NDRecoMatchType matchType = caf::NDRecoMatchType::kUndeclared; ///< specifies how the match was performed
 
       SRTrack trk;                   ///< new track object generated from synthesis of matched parts
   };
