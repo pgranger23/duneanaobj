@@ -49,7 +49,13 @@ namespace caf
     kUnknownGenerator = 0,
     kGENIE            = 1,
     kGIBUU            = 2,
-    kNEUT             = 3
+    kNEUT             = 3,
+    kCRY              = 4,
+    kNuWro            = 5,
+    kMARLEY           = 6,
+    kCORSIKA          = 7,
+    kGEANT            = 8
+
   };
 
   /// Methods for reconstructing particle energies.
@@ -131,12 +137,24 @@ namespace caf
     kPandoraNDLAr
   };
 
+
     enum NDRecoMatchType
   {
     kUndeclared = 0, ///< default value
     kSimple = 1,  ///< match performed using Kate Hildebrandt's "simple" matching algorithm
     kUniqueNoTime = 2,  ///< match performed using Quinton Weyrich's NDLArTMSUniqueMatchRecoFiller.cxx, without time
     kUniqueWithTime = 3 ///< match performed using Quinton Weyrich's NDLArTMSUniqueMatchRecoFiller.cxx, with time
+  };
+  
+  /// \brief What is the type of the reconstructed object?
+  /// This is used to help with the association of reconstructed particles
+  /// to underlying reconstructed objects.
+  enum RecoObjType
+  {
+    kUnknownRecoObj = -1, ///< default value
+    kTrack          = 1,  ///< track
+    kShower         = 2,  ///< shower
+    kHitCollection  = 3,  ///< hit collection (mostly used to garbage collect all remaining hits)
   };
 
 }

@@ -3,6 +3,24 @@
 
 ##### current
 
+##### [v03_07_00] -- 2025-04-17
+* Add convenience navigation functions for ancestry traversal with SRProxy [#50]
+* Bump default qual to e26, srproxy to v00.45; eliminate e20
+
+##### [v03_06_01] -- 2024-08-30
+* Modernize the cetmodules stuff [#31, #38]
+* Track & shower matching bugfix [#41]
+* Add new flash match class & fix initialization of run info [#42]
+* Touch up `classes_def.xml` [#44]
+
+##### [v03_05_00] -- 2025-05-13
+* Add extra reco Enu fields for FD analysis usage [#34]
+* Bump ROOT version [#36]
+* Touch up `classes_def.xml` [#37]
+
+##### [v03_04_00] -- 2024-03-18
+* Bump ROOT, SRProxy versions [#33]
+
 ##### [v03_03_00] -- 2024-01-12  (PR #27)
 * Store GEANT4 process codes & include documentation links rather than translating them to internal enumeration
 
