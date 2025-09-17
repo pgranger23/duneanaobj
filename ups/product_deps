@@ -318,6 +318,8 @@ end_product_list
 #
 ####################################
 qualifier	root		srproxy	notes
+e20:debug	e20:p3915:debug	py3915
+e20:prof	e20:p3915:prof	py3915
 c14:debug	c14:p3915:debug	py3915
 c14:prof	c14:p3915:prof	py3915
 e26:debug	e26:p3915:debug	py3915

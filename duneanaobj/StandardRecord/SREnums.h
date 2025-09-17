@@ -137,6 +137,15 @@ namespace caf
     kPandoraNDLAr
   };
 
+
+    enum NDRecoMatchType
+  {
+    kUndeclared = 0, ///< default value
+    kSimple = 1,  ///< match performed using Kate Hildebrandt's "simple" matching algorithm
+    kUniqueNoTime = 2,  ///< match performed using Quinton Weyrich's NDLArTMSUniqueMatchRecoFiller.cxx, without time
+    kUniqueWithTime = 3 ///< match performed using Quinton Weyrich's NDLArTMSUniqueMatchRecoFiller.cxx, with time
+  };
+  
   /// \brief What is the type of the reconstructed object?
   /// This is used to help with the association of reconstructed particles
   /// to underlying reconstructed objects.
