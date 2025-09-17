@@ -19,7 +19,7 @@ namespace caf
 
   template class Proxy<NDLAR_RECO_STACK>;
   template class Proxy<FD_RECO_STACK>;
-  template class Proxy<MatchType>;
+  template class Proxy<NDRecoMatchType>;
 
   template class Proxy<TrueParticleID::PartType>;
   template class Proxy<RecoObjType>;
