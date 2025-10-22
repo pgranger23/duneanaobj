@@ -40,12 +40,12 @@ namespace caf
       std::vector<unsigned int> daughters; ///< GEANT4 trackIDs of daughter particles from this particle
 
       /// @name GEANT4 process codes.
-      ///   The "process" codes are defined here: https://geant4.kek.jp/Reference/v11.1.1/G4ProcessType_8hh_source.html
+      ///   The "process" codes are defined here: https://geant4.kek.jp/Reference/11.1.1/G4ProcessType_8hh_source.html
       ///   The "subprocess" codes depend on the value of the "process" code (see previous).  The most relevant ones are:
-      ///   - 'transportation': https://geant4.kek.jp/Reference/v11.1.1/G4TransportationProcessType_8hh_source.html
-      ///   - 'electromagnetic': https://geant4.kek.jp/Reference/v11.1.1/G4EmProcessSubType_8hh_source.html
-      ///   - 'hadronic': https://geant4.kek.jp/Reference/v11.1.1/G4HadronicProcessType_8hh_source.html
-      ///   - 'decay': https://geant4.kek.jp/Reference/v11.1.1/G4DecayProcessType_8hh_source.html
+      ///   - 'transportation': https://geant4.kek.jp/Reference/11.1.1/G4TransportationProcessType_8hh_source.html
+      ///   - 'electromagnetic': https://geant4.kek.jp/Reference/11.1.1/G4EmProcessSubType_8hh_source.html
+      ///   - 'hadronic': https://geant4.kek.jp/Reference/11.1.1/G4HadronicProcessType_8hh_source.html
+      ///   - 'decay': https://geant4.kek.jp/Reference/11.1.1/G4DecayProcessType_8hh_source.html
       ///   - 'general': these are defined in the same file as 'transportation', above
       ///@{
 
@@ -59,10 +59,10 @@ namespace caf
       ///   then you'll see here the process for the first trajectory point---which might be something
       ///   confusing like 'ionization'---instead!)
       /// Study the values carefully for particles you are interested in if you want to use it!
-      unsigned int  first_process;
-      unsigned int  first_subprocess; ///< GEANT4 subprocess code for this particle's creation or first step (see caveat on first_process).
-      unsigned int  end_process;      ///< G4 process code for the particle's end
-      unsigned int  end_subprocess;   ///< G4 subprocess code for the particle's end
+      unsigned int  first_process    = 0;
+      unsigned int  first_subprocess = 0; ///< GEANT4 subprocess code for this particle's creation or first step (see caveat on first_process).
+      unsigned int  end_process      = 0;      ///< G4 process code for the particle's end
+      unsigned int  end_subprocess   = 0;   ///< G4 subprocess code for the particle's end
       ///@}
   };
 
