@@ -9,6 +9,8 @@ list(GET VERSION_LIST 2 duneanaobj_VERSION_PATCH)
 
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake/Modules)
 
+option(duneanaobj_PYTHON_ENABLED "Whether to build python bindings to proxy classes." OFF)
+
 include(CPM)
 
 SET(SRProxy_MIN_VERSION 0.46.0)

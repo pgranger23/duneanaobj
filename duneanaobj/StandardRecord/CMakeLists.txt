@@ -1,5 +1,5 @@
 execute_process(COMMAND git rev-parse --short=8 HEAD
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../.. 
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../..
   OUTPUT_VARIABLE duneanaobj_GITSHORTHASH8
   RESULT_VARIABLE GIT_CMD_SUCCESS
   OUTPUT_STRIP_TRAILING_WHITESPACE)
@@ -74,19 +74,19 @@ SET(SR_HEADER_FILES
 )
 
 add_library(duneanaobj_StandardRecord SHARED ${SR_IMPL_FILES})
-target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::MathCore)
-target_include_directories(duneanaobj_StandardRecord PUBLIC 
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../..> 
+target_link_libraries(duneanaobj_StandardRecord PUBLIC ROOT::Physics ROOT::MathCore)
+target_include_directories(duneanaobj_StandardRecord PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../..>
   $<INSTALL_INTERFACE:include>)
-target_include_directories(duneanaobj_StandardRecord PRIVATE 
+target_include_directories(duneanaobj_StandardRecord PRIVATE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> #root puts this in the dictionary
   )
 set_target_properties(duneanaobj_StandardRecord PROPERTIES EXPORT_NAME StandardRecord)
 install(TARGETS duneanaobj_StandardRecord EXPORT duneanaobj_targets DESTINATION lib)
 install(FILES ${SR_HEADER_FILES} DESTINATION include/duneanaobj/StandardRecord)
-install(FILES 
-    ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict_rdict.pcm 
-    ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict.rootmap 
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict_rdict.pcm
+    ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict.rootmap
   DESTINATION lib)
 
 add_library(duneanaobj::StandardRecord ALIAS duneanaobj_StandardRecord)
