@@ -1,4 +1,4 @@
-#include "SRProxy.h"
+#include "duneanaobj/StandardRecord/Proxy/SRProxy.h"
 
 #include "TFile.h"
 #include "TTree.h"
