@@ -1,3 +1,8 @@
+SET(GEN_PYTHON_BINDINGS)
+if(duneanaobj_PYTHON_ENABLED)
+  SET(GEN_PYTHON_BINDINGS EMIT_PYTHON_BINDINGS)
+endif()
+
 GenSRProxy(
   HEADER duneanaobj/StandardRecord/StandardRecord.h
   OUTPUT_NAME SRProxy
@@ -6,7 +11,7 @@ GenSRProxy(
   EPILOG_FWD ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h
   INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../../.. ${ROOT_INCLUDE_DIRS}
   DEPENDENCIES ${SR_HEADER_FILE_FQPS}
-  EMIT_PYTHON_BINDINGS
+  ${GEN_PYTHON_BINDINGS}
   VVERBOSE)
 
 add_library(duneanaobj_StandardRecordProxy SHARED SRProxy.cxx)

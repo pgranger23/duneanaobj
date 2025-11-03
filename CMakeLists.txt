@@ -38,6 +38,8 @@ install(TARGETS duneanaobj_all EXPORT duneanaobj_targets)
 
 add_library(duneanaobj::all ALIAS duneanaobj_all)
 
+add_subdirectory(app)
+
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
     "${PROJECT_BINARY_DIR}/duneanaobjConfigVersion.cmake"
