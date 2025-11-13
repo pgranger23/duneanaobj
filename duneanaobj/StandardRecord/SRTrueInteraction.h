@@ -43,7 +43,9 @@ namespace caf
        static constexpr float NaN = std::numeric_limits<float>::signaling_NaN();
 
      public:
-       long int  id       = -1;   ///< Interaction ID == 'vertexID' from edep-sim (ND) or GENIE record id (FD)
+       /// Interaction ID == 'vertexID' from edep-sim (ND) or GENIE record id (FD).
+       /// In the ND case, the packing of the VertexID is described in https://github.com/DUNE/2x2_sim/wiki/Production-changes-and-validation-finding
+       long int  id       = -1;
        
        /// Index of interaction in GENIE tree.
        /// Note: for ND, check `id` to determine whether

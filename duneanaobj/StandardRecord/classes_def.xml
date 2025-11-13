@@ -42,7 +42,8 @@
    <version ClassVersion="10" checksum="175116589"/>
   </class>
 
-  <class name="caf::SRDetectorMeta" ClassVersion="12">
+  <class name="caf::SRDetectorMeta" ClassVersion="13">
+   <version ClassVersion="13" checksum="3486371400"/>
    <version ClassVersion="12" checksum="989983909"/>
    <version ClassVersion="11" checksum="810717581"/>
    <version ClassVersion="10" checksum="2557124789"/>
@@ -63,7 +64,8 @@
    <version ClassVersion="10" checksum="1911225621"/>
   </class>
 
-  <class name="caf::SRInteraction" ClassVersion="11">
+  <class name="caf::SRInteraction" ClassVersion="12">
+   <version ClassVersion="12" checksum="2000195876"/>
    <version ClassVersion="11" checksum="1154108588"/>
    <version ClassVersion="10" checksum="2468658506"/>
   </class>
@@ -100,7 +102,8 @@
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="14">
+  <class name="caf::SRRecoParticle" ClassVersion="15">
+   <version ClassVersion="15" checksum="4130745478"/>
    <version ClassVersion="14" checksum="621972464"/>
    <version ClassVersion="13" checksum="2634132066"/>
    <version ClassVersion="12" checksum="223390088"/>
@@ -115,7 +118,8 @@
 
   <!-- - - - - - - - Types used in det-specific situations - - - - -->
 
-  <class name="caf::SRTrack" ClassVersion="18">
+  <class name="caf::SRTrack" ClassVersion="19">
+   <version ClassVersion="19" checksum="3416692108"/>
    <version ClassVersion="18" checksum="2409174386"/>
    <version ClassVersion="17" checksum="3391134008"/>
    <version ClassVersion="16" checksum="3368125268"/>
@@ -168,9 +172,17 @@
    <version ClassVersion="13" checksum="958085"/>
   </class>
 
-  <class name="caf::SRFDInt" ClassVersion="10">
+  <class name="caf::SRFDInt" ClassVersion="11">
+   <version ClassVersion="11" checksum="1124287626"/>
    <version ClassVersion="10" checksum="3607270087"/>
    </class>
+
+  <class name="caf::SRPFP" ClassVersion="10">
+   <version ClassVersion="10" checksum="3744464743"/>
+  </class>
+
+  <class name="std::vector<caf::SRPFP>">
+  </class>
 
 
     <!-- - - - - - - - - - ND specific - - - - - - - - - - - - - - - -->
@@ -209,7 +221,8 @@
    <version ClassVersion="10" checksum="3398719456"/>
   </class>
 
-  <class name="caf::SRNDTrackAssn" ClassVersion="14">
+  <class name="caf::SRNDTrackAssn" ClassVersion="15">
+   <version ClassVersion="15" checksum="2460195191"/>
    <version ClassVersion="14" checksum="2659631828"/>
    <version ClassVersion="13" checksum="744508541"/>
    <version ClassVersion="12" checksum="3802670637"/>
@@ -242,7 +255,8 @@
    <version ClassVersion="10" checksum="1674759717"/>
   </class>
 
-    <class name="caf::SRGArTrack" ClassVersion="14">
+    <class name="caf::SRGArTrack" ClassVersion="15">
+     <version ClassVersion="15" checksum="4066948530"/>
    <version ClassVersion="14" checksum="2591374164"/>
    <version ClassVersion="13" checksum="3987769238"/>
    <version ClassVersion="12" checksum="3869515338"/>
@@ -293,6 +307,10 @@
    <version ClassVersion="10" checksum="87138233"/>
   </class>
 
+  <class name="caf::SRMINERvAID"  ClassVersion="10">
+   <version ClassVersion="10" checksum="4040824592"/>
+  </class>
+
   <!-- - - - - - - - - - Truth - - - - - - - - - - - - - - - -->
 
   <class name="caf::SRTruthBranch" ClassVersion="10">
@@ -314,7 +332,8 @@
    <version ClassVersion="10" checksum="2662412328"/>
   </class>
 
-  <class name="caf::SRTrueParticle" ClassVersion="15">
+  <class name="caf::SRTrueParticle" ClassVersion="16">
+   <version ClassVersion="16" checksum="399263066"/>
    <version ClassVersion="15" checksum="1980366129"/>
    <version ClassVersion="14" checksum="1907525372"/>
    <version ClassVersion="13" checksum="1852140823"/>
@@ -326,5 +345,12 @@
   <enum name="caf::Generator" ClassVersion="10" />
   <enum name="caf::ScatteringMode" ClassVersion="10" />
 
+
+ <class name="caf::FlashMatch" ClassVersion="10">
+  <version ClassVersion="10" checksum="417345908"/>
+ </class>
+ <class name="caf::SROpticalFlash" ClassVersion="10">
+  <version ClassVersion="10" checksum="3730213350"/>
+ </class>
 
 </lcgdict>

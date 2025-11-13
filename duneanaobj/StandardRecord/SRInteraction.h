@@ -38,6 +38,9 @@ namespace caf
       std::vector<std::size_t>    truth;              ///< Indices of SRTrueInteraction(s), if relevant (use this index in SRTruthBranch::nu to get them)
       std::vector<float>   truthOverlap;              ///< Fractional overlap between this reco interaction and each true interaction
 
+      bool preselected = false; ///< Was this interaction preselected?  (Useful for workflows where CAFs are preprocessed / filtered in the process of making concatenated files)
+
+      bool contained() const; ///< Convenience function to check if the interaction is contained in the detector by checking the contained flag of all reco particles
   };
 
 } // caf
