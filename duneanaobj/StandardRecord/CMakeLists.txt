@@ -16,61 +16,63 @@ ROOT_GENERATE_DICTIONARY(StandardRecordDict StandardRecord.h
   LINKDEF classes_def.xml)
 
 SET(SR_IMPL_FILES
+  Navigate.cxx
   SRFD.cxx
-  SRGlobal.cxx
-  SRMINERvA.cxx
-  SRNDLAr.cxx
-  SRTrack.cxx
-  SRVector3D.cxx
-  StandardRecord.cxx
   SRGArTrack.cxx
+  SRGlobal.cxx
+  SRInteraction.cxx
   SRLorentzVector.cxx
   SRMeta.cxx
+  SRMINERvA.cxx
+  SRNDLAr.cxx
   SRSystParamHeader.cxx
+  SRTrack.cxx
   SRTruthBranch.cxx
+  SRVector3D.cxx
   SRWeightGlobal.cxx
+  StandardRecord.cxx
   ${CMAKE_CURRENT_BINARY_DIR}/StandardRecordDict.cxx
 )
 
 SET(SR_HEADER_FILES
   SRBeamBranch.h
-  SREnums.h
-  SRGArTrack.h
-  SRMINERvA.h
-  SRNDShowerAssn.h
-  SRRecoParticle.h
-  SRTMS.h
-  SRVector3D.h
-  SRCVNScoreBranch.h
-  SRFD.h
-  SRGlobal.h
-  SRMeta.h
-  SRNDTrackAssn.h
-  SRRecoParticlesBranch.h
-  SRTrack.h
-  SRWeightGlobal.h
   SRCommonRecoBranch.h
-  SRFDBranch.h
-  SRInteraction.h
-  SRNDAssnBranch.h
-  SRNeutrinoEnergyBranch.h
-  SRSAND.h
-  SRTrueInteraction.h
-  StandardRecord.h
+  SRCVNScoreBranch.h
   SRDetectorMetaBranch.h
-  SRGAr.h
-  SRInteractionBranch.h
-  SRNDBranch.h
-  SRNeutrinoHypothesisBranch.h
-  SRShower.h
-  SRTrueParticle.h
   SRDirectionBranch.h
+  SREnums.h
+  SRFD.h
+  SRFDBranch.h
+  SRGAr.h
   SRGArECAL.h
+  SRGArTrack.h
+  SRGlobal.h
+  SRInteraction.h
+  SRInteractionBranch.h
   SRLorentzVector.h
+  SRMeta.h
+  SRMINERvA.h
+  SRNDAssnBranch.h
+  SRNDBranch.h
   SRNDLAr.h
+  SRNDShowerAssn.h
+  SRNDTrackAssn.h
+  SRNeutrinoEnergyBranch.h
+  SRNeutrinoHypothesisBranch.h
   SROpticalFlash.h
+  SRPFP.h
+  SRRecoParticle.h
+  SRRecoParticlesBranch.h
+  SRSAND.h
+  SRShower.h
   SRSystParamHeader.h
+  SRTMS.h
+  SRTrack.h
+  SRTrueInteraction.h
+  SRTrueParticle.h
   SRTruthBranch.h
+  SRVector3D.h
+  SRWeightGlobal.h
 )
 
 add_library(duneanaobj_StandardRecord SHARED ${SR_IMPL_FILES})

@@ -8,9 +8,9 @@ set(duneanaobj_CXX_STANDARD @duneanaobj_CXX_STANDARD@)
 
 set(duneanaobj_FOUND TRUE)
 
-include(${CMAKE_CURRENT_LIST_DIR}/duneanaobjTargets.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/duneanaobj_targets.cmake)
 if(NOT TARGET duneanaobj::all)
-  message(WARNING "Expected to find target duneanaobj::all in ${CMAKE_CURRENT_LIST_DIR}/duneanaobjTargets.cmake")
+  message(WARNING "Expected to find target duneanaobj::all in ${CMAKE_CURRENT_LIST_DIR}/duneanaobj_targets.cmake")
   set(duneanaobj_FOUND FALSE)
   return()
 endif()
@@ -29,10 +29,10 @@ find_path(duneanaobj_LIB_DIR
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(duneanaobj
-    REQUIRED_VARS 
-      duneanaobj_INCLUDE_DIR 
+    REQUIRED_VARS
+      duneanaobj_INCLUDE_DIR
       duneanaobj_LIB_DIR
-    VERSION_VAR 
+    VERSION_VAR
       duneanaobj_VERSION
 )
 
