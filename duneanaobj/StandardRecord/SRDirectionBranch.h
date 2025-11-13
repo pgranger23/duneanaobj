@@ -17,7 +17,7 @@ namespace caf
     public:
       SRVector3D lngtrk;       ///< Direction reconstructed using the longest track
       SRVector3D heshw;        ///< Direction reconstructed using the highest-energy shower
-      SRVector3D sandreco_mom; ///< Direction reconstructed using sandreco
+      SRVector3D part_mom_sum; ///< Direction reconstructed using sandreco
 
       // add others as needed
   };
