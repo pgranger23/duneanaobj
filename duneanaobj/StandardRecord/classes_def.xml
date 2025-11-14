@@ -99,7 +99,8 @@
    <version ClassVersion="10" checksum="684361603"/>
   </class>
 
-  <class name="caf::SRRecoParticle" ClassVersion="15">
+  <class name="caf::SRRecoParticle" ClassVersion="16">
+   <version ClassVersion="16" checksum="4230274279"/>
    <version ClassVersion="15" checksum="4130745478"/>
    <version ClassVersion="14" checksum="621972464"/>
    <version ClassVersion="13" checksum="2634132066"/>
