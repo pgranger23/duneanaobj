@@ -15,9 +15,10 @@ namespace caf
   class SRDirectionBranch
   {
     public:
-      SRVector3D lngtrk;   ///< Direction reconstructed using the longest track
-      SRVector3D heshw;    ///< Direction reconstructed using the highest-energy shower
+      SRVector3D lngtrk;       ///< Direction reconstructed using the longest track
+      SRVector3D heshw;        ///< Direction reconstructed using the highest-energy shower
       SRVector3D calo;    ///< Direction reconstructed using the calorimetric energy depositions
+      SRVector3D part_mom_sum; ///< Direction reconstructed using the sum of reco particle momenta 
 
       // add others as needed
   };

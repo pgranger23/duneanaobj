@@ -24,6 +24,10 @@ namespace caf
 
       int npida = 0;
       std::vector<SRRecoParticle> pida;      ///< Particles bearing weights from PIDA algorithm
+
+      int nsandreco = 0;
+      std::vector<SRRecoParticle> sandreco;      ///< Particles reconstructed by Sandreco code
+
   };
 
 } // caf

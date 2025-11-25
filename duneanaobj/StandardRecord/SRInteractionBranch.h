@@ -20,6 +20,10 @@ namespace caf
 
       std::vector<SRInteraction> pandora;   ///< Interactions from Pandora reconstruction
       std::size_t npandora;
+
+      std::vector<SRInteraction> sandreco;   ///< Interactions from sadreco reconstruction
+      std::size_t nsandreco;
+
   };
 }
 
