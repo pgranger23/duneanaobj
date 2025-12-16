@@ -18,7 +18,7 @@ SET(SRProxy_MIN_VERSION 0.46.0)
 CPMFindPackage(
   NAME SRProxy
   GIT_TAG feature/Clingification_rebase3
-  GITHUB_REPOSITORY luketpickering/SRProxy
+  GITHUB_REPOSITORY pgranger23/SRProxy
   VERSION ${SRProxy_MIN_VERSION}
 )
 
