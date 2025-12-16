@@ -16,11 +16,9 @@ ROOT_GENERATE_DICTIONARY(StandardRecordDict StandardRecord.h
   LINKDEF classes_def.xml)
 
 SET(SR_IMPL_FILES
-  Navigate.cxx
   SRFD.cxx
   SRGArTrack.cxx
   SRGlobal.cxx
-  SRInteraction.cxx
   SRLorentzVector.cxx
   SRMeta.cxx
   SRMINERvA.cxx
@@ -60,7 +58,6 @@ SET(SR_HEADER_FILES
   SRNeutrinoEnergyBranch.h
   SRNeutrinoHypothesisBranch.h
   SROpticalFlash.h
-  SRPFP.h
   SRRecoParticle.h
   SRRecoParticlesBranch.h
   SRSAND.h
