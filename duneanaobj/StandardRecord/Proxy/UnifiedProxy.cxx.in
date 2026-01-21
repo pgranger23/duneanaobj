@@ -1,0 +1,3 @@
+#include "duneanaobj/StandardRecord/Proxy/SRProxy.h"
+#include "@CMAKE_CURRENT_BINARY_DIR@/SRProxy.cxx"
+#include "@CMAKE_CURRENT_SOURCE_DIR@/Instantiations.cxx"

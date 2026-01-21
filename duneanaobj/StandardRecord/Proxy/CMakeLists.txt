@@ -14,8 +14,13 @@ GenSRProxy(
   ${GEN_PYTHON_BINDINGS}
   VVERBOSE)
 
-# Added Instantiations.cxx to the library sources
-add_library(duneanaobj_StandardRecordProxy SHARED SRProxy.cxx Instantiations.cxx)
+configure_file(UnifiedProxy.cxx.in UnifiedProxy.cxx @ONLY)
+
+# Unified compilation to avoid duplicate symbols
+add_library(duneanaobj_StandardRecordProxy SHARED UnifiedProxy.cxx SRProxy.cxx)
+set_source_files_properties(SRProxy.cxx PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties(Instantiations.cxx PROPERTIES HEADER_FILE_ONLY TRUE)
+
 target_link_libraries(duneanaobj_StandardRecordProxy PUBLIC SRProxy::BasicTypes duneanaobj_StandardRecord)
 target_include_directories(duneanaobj_StandardRecordProxy PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../..>
