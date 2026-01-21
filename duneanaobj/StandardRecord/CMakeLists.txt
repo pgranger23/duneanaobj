@@ -52,10 +52,7 @@ add_library(duneanaobj::StandardRecord ALIAS duneanaobj_StandardRecord)
 
 # get the location of these to allow the code generation scripts to properly set up
 # dependencies
-SET(SR_HEADER_FILE_FQPS)
-foreach(HDR ${SR_HEADER_FILES})
-  LIST(APPEND SR_HEADER_FILE_FQPS ${CMAKE_CURRENT_SOURCE_DIR}/${HDR})
-endforeach()
+SET(SR_HEADER_FILE_FQPS ${SR_HEADER_FILES})
 
 add_subdirectory(Proxy)
 add_subdirectory(Flat)
