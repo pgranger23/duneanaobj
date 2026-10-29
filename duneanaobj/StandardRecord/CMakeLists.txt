@@ -12,8 +12,13 @@ configure_file(StandardRecord.cxx.in ${CMAKE_CURRENT_BINARY_DIR}/StandardRecord.
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../..)
 
-ROOT_GENERATE_DICTIONARY(StandardRecordDict StandardRecord.h
-  LINKDEF classes_def.xml)
+# The dictionary is compiled into duneanaobj_StandardRecord, so name the module after it:
+# the .rootmap then points ROOT's autoloader at libduneanaobj_StandardRecord.so.
+# SRGlobal.h is not reachable from StandardRecord.h but its classes are in classes_def.xml (globalTree)
+ROOT_GENERATE_DICTIONARY(StandardRecordDict StandardRecord.h SRGlobal.h
+  MODULE duneanaobj_StandardRecord
+  LINKDEF classes_def.xml
+  NO_CXXMODULE)
 
 # Get all source files from the current directory
 file(GLOB SR_IMPL_FILES *.cxx)
@@ -48,8 +53,8 @@ set_target_properties(duneanaobj_StandardRecord PROPERTIES EXPORT_NAME StandardR
 install(TARGETS duneanaobj_StandardRecord EXPORT duneanaobj_targets DESTINATION lib)
 install(FILES ${SR_HEADER_FILES} DESTINATION include/duneanaobj/StandardRecord)
 install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict_rdict.pcm
-    ${CMAKE_CURRENT_BINARY_DIR}/libStandardRecordDict.rootmap
+    ${CMAKE_CURRENT_BINARY_DIR}/libduneanaobj_StandardRecord_rdict.pcm
+    ${CMAKE_CURRENT_BINARY_DIR}/libduneanaobj_StandardRecord.rootmap
   DESTINATION lib)
 
 add_library(duneanaobj::StandardRecord ALIAS duneanaobj_StandardRecord)
