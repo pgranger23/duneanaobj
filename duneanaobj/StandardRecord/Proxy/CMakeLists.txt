@@ -1,54 +1,62 @@
-FILE(GLOB SR_DEPENDENCIES duneanaobj/StandardRecord/*.h)
-
-# GEN_SRPROXY and the SRProxy include path are set up by the parent
-# StandardRecord/CMakeLists.txt, which only descends here when the generator
-# was found.
-add_custom_command(# Rebuild if anything in StandardRecord/ changes
-                   DEPENDS ${SR_DEPENDENCIES}
-                   OUTPUT SRProxy.cxx SRProxy.h FwdDeclare.h
-                   COMMAND ${GEN_SRPROXY} -i duneanaobj/StandardRecord/StandardRecord.h -o SRProxy --target caf::StandardRecord --include-path ${PROJECT_SOURCE_DIR}:$ENV{ROOT_INCLUDE_PATH}:$ENV{ROOT_INC} --output-path duneanaobj/StandardRecord/Proxy/ --prolog ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h --epilog-fwd ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h --extra-cflags "${SRPROXY_CASTXML_CFLAGS}"
-  )
-
-# This is a very picky error buried inside template instantiations
-#add_definitions(-Wno-int-in-bool-context)
-
-if(NOT SKIP_CET)
-    message(STATUS "CETMODULES_CURRENT_PROJECT_NAME = '${CETMODULES_CURRENT_PROJECT_NAME}'")
-    cet_make_library(LIBRARY_NAME duneanaobj_StandardRecordProxy
-            SOURCE       SRProxy.cxx Instantiations.cxx
-            LIBRARIES    ROOT::Core ROOT::Physics ROOT::TreePlayer)
-
-    if (DEFINED ENV{MRB_BUILDDIR} AND NOT "$ENV{MRB_BUILDDIR}" STREQUAL "")
-        message(STATUS "MRB_BUILDDIR = $ENV{MRB_BUILDDIR}")
-    endif()
-    if(IS_DIRECTORY ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view)
-        message(STATUS "env view dir  ${PROJECT_SOURCE_DIR}/../../local/.spack-env/view")
-        include_directories(${PROJECT_SOURCE_DIR}/../../local/.spack-env/view/include)
-        include_directories($ENV{ROOT_INCLUDE_PATH})
-    endif()
-    install_headers(EXTRAS ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h)
-else()
-    # GNUInstallDirs is included by StandardRecord/CMakeLists.txt, but that runs
-    # after this subdirectory, so pull it in here for CMAKE_INSTALL_*DIR.
-    include(GNUInstallDirs)
-
-    add_library(duneanaobj_StandardRecordProxy
-                SRProxy.cxx Instantiations.cxx)
-    target_link_libraries(duneanaobj_StandardRecordProxy ROOT::Core ROOT::Physics ROOT::TreePlayer)
-    if(SRProxy_FOUND)
-        # Propagate SRProxy to consumers of the exported target; duneanaobjConfig
-        # re-finds it via find_dependency(SRProxy).
-        target_link_libraries(duneanaobj_StandardRecordProxy SRProxy::SRProxy)
-    endif()
-    target_include_directories(duneanaobj_StandardRecordProxy INTERFACE
-            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
-            $<INSTALL_INTERFACE:include>)
-
-    install(TARGETS duneanaobj_StandardRecordProxy
-            EXPORT duneanaobjTargets
-            LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-
-    install(FILES ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/SRProxy.h ${PROJECT_BINARY_DIR}/duneanaobj/StandardRecord/Proxy/FwdDeclare.h
-            DESTINATION include/duneanaobj/StandardRecord/Proxy)
+SET(GEN_PYTHON_BINDINGS)
+if(duneanaobj_PYTHON_ENABLED)
+  SET(GEN_PYTHON_BINDINGS EMIT_PYTHON_BINDINGS)
 endif()
 
+GenSRProxy(
+  HEADER duneanaobj/StandardRecord/StandardRecord.h
+  OUTPUT_NAME SRProxy
+  TARGETNAME caf::StandardRecord
+  PROLOG ${CMAKE_CURRENT_SOURCE_DIR}/Prolog.h
+  EPILOG_FWD ${CMAKE_CURRENT_SOURCE_DIR}/EpilogFwd.h
+  INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../../.. ${ROOT_INCLUDE_DIRS}
+  DEPENDENCIES ${SR_HEADER_FILE_FQPS}
+  ${GEN_PYTHON_BINDINGS}
+  VVERBOSE)
+
+# Added Instantiations.cxx to the library sources
+add_library(duneanaobj_StandardRecordProxy SHARED SRProxy.cxx Instantiations.cxx)
+target_link_libraries(duneanaobj_StandardRecordProxy PUBLIC SRProxy::BasicTypes duneanaobj_StandardRecord)
+target_include_directories(duneanaobj_StandardRecordProxy PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../../..>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../../..>
+  $<INSTALL_INTERFACE:include>)
+
+install(TARGETS duneanaobj_StandardRecordProxy EXPORT duneanaobj_targets DESTINATION lib)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/SRProxy.h
+              ${CMAKE_CURRENT_BINARY_DIR}/FwdDeclare.h
+        DESTINATION include/duneanaobj/StandardRecord/Proxy)
+
+add_library(duneanaobj::StandardRecordProxy ALIAS duneanaobj_StandardRecordProxy)
+
+if(duneanaobj_PYTHON_ENABLED)
+  find_package(Python3 REQUIRED COMPONENTS Development Interpreter)
+
+  # PYTHON PATHS
+  set(duneanaobj_PYTHONPATH "python/${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}")
+
+  include(FetchContent)
+
+  FetchContent_Declare(
+    pybind11
+    GIT_REPOSITORY https://github.com/pybind/pybind11.git
+    GIT_TAG        f5fbe86 # release-3.0.1
+  )
+
+  FetchContent_MakeAvailable(pybind11)
+
+  pybind11_add_module(pySRProxy SHARED SRProxy.pybind.cxx)
+
+  target_include_directories(pySRProxy
+    PRIVATE
+      $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+      $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/include>
+      )
+
+  target_link_libraries(pySRProxy
+    PRIVATE
+      duneanaobj::StandardRecordProxy)
+
+  install(TARGETS pySRProxy
+      LIBRARY DESTINATION ${duneanaobj_PYTHONPATH})
+endif()

@@ -1,29 +1,6 @@
-# ======================================================================
-#  larsoft main build file
-#
-#  cd .../path/to/build/directory
-#  source .../path/to/larsoft/ups/setup_for_development <-d|-p>
-#  cmake [-DCMAKE_INSTALL_PREFIX=/install/path]
-#        -DCMAKE_BUILD_TYPE=$CETPKG_TYPE
-#        $CETPKG_SOURCE
-#  make
-#  make test
-#  make install
-#  make package (builds distribution tarfile)
-# ======================================================================
-
-
 cmake_minimum_required (VERSION 3.20 FATAL_ERROR)
-# cmake_policy(VERSION 3.18)
 
-# See https://cmake.org/cmake/help/latest/policy/CMP0048.html#policy:CMP0048
-# as of Feb 2026, dunesw mrb-built products set the version in the
-# CMAKE_PROJECT_VERSION_STRING set, and not in the project line.
-# but we must be using the OLD policy.  Setting the version string
-# here will get overwritten by the project line with the same value when
-# we migrate to the NEW policy
-
-project(duneanaobj VERSION 04.01.00 LANGUAGES CXX)
+project(duneanaobj VERSION 4.1.0 LANGUAGES CXX)
 set(${PROJECT_NAME}_CMAKE_PROJECT_VERSION_STRING 04.01.00)
 
 string(REPLACE "." ";" VERSION_LIST ${PROJECT_VERSION})
@@ -31,55 +8,56 @@ list(GET VERSION_LIST 0 duneanaobj_VERSION_MAJOR)
 list(GET VERSION_LIST 1 duneanaobj_VERSION_MINOR)
 list(GET VERSION_LIST 2 duneanaobj_VERSION_PATCH)
 
-message(STATUS "\n\n  ==========================   ${PROJECT_NAME}   ==========================")
+LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake/Modules)
 
-option(SKIP_CET "Build without CET/cetmodules dependencies" OFF)
+option(duneanaobj_PYTHON_ENABLED "Whether to build python bindings to proxy classes." OFF)
 
-if(DEFINED ENV{UPS_DIR})
-   set(SKIP_CET false)
-endif()
+include(CPM)
 
-if(NOT SKIP_CET)
-    find_package(cetmodules REQUIRED)
-    # cetbuildtools contains our cmake modules
+SET(SRProxy_MIN_VERSION 0.46.0)
 
-    include(CetCMakeEnv)
-    cet_cmake_env()
+CPMFindPackage(
+  NAME SRProxy
+  GIT_TAG feature/Clingification_rebase3
+  GITHUB_REPOSITORY pgranger23/SRProxy
+  VERSION ${SRProxy_MIN_VERSION}
+)
 
-    set_install_root()
-
-    # The specification of the C++ standard is required because CET macros
-    # set it to C++98 by default, and then override it depending on the
-    # compiler version, as determined by the compiler qualifier.
-    # Removing that qualifier, we need to supply that information manually,
-    # and maintain it too.
-    cet_set_compiler_flags(DIAGS CAUTIOUS
-      WERROR
-      NO_UNDEFINED
-      ALLOW_DEPRECATIONS
-      EXTRA_FLAGS -pedantic -Wno-unused-local-typedefs -Wno-undefined-var-template -I $ENV{CLANG_FQ_DIR}/include/c++/v1
-    )
-
-    cet_report_compiler_flags()
-
-    # these are minimum required versions, not the actual product versions
-    find_package(ROOT 6.00.00 REQUIRED)
-
-    include(BuildDictionary)
-
-    # packaging utility
-
-
-else()
-    find_package(ROOT)
-    # Source root for the hand-written "duneanaobj/StandardRecord/*.h" includes,
-    # and the build root for the generated Proxy/Flat headers
-    # (SRProxy.h, FlatRecord.h, FwdDeclare.h), which land under ${PROJECT_BINARY_DIR}/duneanaobj/.
-    include_directories(. ${PROJECT_BINARY_DIR})
-endif()
+find_package(ROOT 6.20 REQUIRED)
 
 add_subdirectory(duneanaobj)
 
-if (NOT SKIP_CET)
-    cet_cmake_config()
-endif()
+add_library(duneanaobj_all INTERFACE)
+set_target_properties(duneanaobj_all PROPERTIES EXPORT_NAME all)
+
+target_link_libraries(duneanaobj_all INTERFACE
+  duneanaobj::StandardRecordProxy
+  duneanaobj::StandardRecordFlat
+  duneanaobj::StandardRecord)
+
+install(TARGETS duneanaobj_all EXPORT duneanaobj_targets)
+
+add_library(duneanaobj::all ALIAS duneanaobj_all)
+
+add_subdirectory(app)
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+    "${PROJECT_BINARY_DIR}/duneanaobjConfigVersion.cmake"
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY AnyNewerVersion
+)
+configure_package_config_file(
+  "${CMAKE_CURRENT_LIST_DIR}/cmake/Templates/duneanaobjConfig.cmake.in"
+  "${PROJECT_BINARY_DIR}/duneanaobjConfig.cmake"
+  INSTALL_DESTINATION this/is/ignored
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+)
+
+install(EXPORT duneanaobj_targets
+        NAMESPACE duneanaobj::
+        DESTINATION lib/cmake/duneanaobj)
+install(FILES "${PROJECT_BINARY_DIR}/duneanaobjConfigVersion.cmake"
+              "${PROJECT_BINARY_DIR}/duneanaobjConfig.cmake"
+        DESTINATION lib/cmake/duneanaobj)
